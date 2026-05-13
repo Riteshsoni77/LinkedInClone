@@ -2,15 +2,16 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import post from './routes/posts.routes.js';
+import postRoutes from './routes/posts.routes.js';
+import userRoutes from './routes/users.routes.js';
 
 
 dotenv.config();
 const app =express();
 app.use(cors());
-
 app.use(express.json());
-app.use("/post",post);
+app.use(postRoutes);
+app.use(userRoutes);
 
 
 const start = async ()=>{

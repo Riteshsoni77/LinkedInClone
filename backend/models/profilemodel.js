@@ -16,7 +16,7 @@ fieldOfStudy:{
 
 });
 
-const workSchema=new mongoose({
+const workSchema=new mongoose.Schema({
     company:{
         type:String,
         default:''
@@ -56,5 +56,9 @@ const profileSchema= new mongoose.Schema({
     }
 
 })
+
+const Profile=mongoose.model('Profile',profileSchema);
+export default Profile;
+
 
  
